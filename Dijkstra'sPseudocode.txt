@@ -1,0 +1,18 @@
+procedure dijkstra(G, S)
+     G-> graph; S->starting vertex
+begin
+    for each vertex V in G
+        path[V] <- infinite
+        previous[V] <- NULL
+        If V != S, add V to Priority Queue PQ
+    path [S] <- 0
+     
+    while PQ IS NOT EMPTY
+        U <- Extract MIN from PQ
+        for each unvisited adjacent_node  V of U
+            tempDistance <- path [U] + edge_weight(U, V)
+            if tempDistance < path [V]
+                path [V] <- tempDistance
+                previous[V] <- U
+    return path[], previous[]
+end
